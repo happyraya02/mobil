@@ -87,7 +87,7 @@ class MobilController extends Controller
     public function edit($id)
     {
         $mobil = mobil::findOrFail($id);
-        return view('admin.mobil.edit', compact('mobil'));
+        return view('admin.edit', compact('edit'));
     }
 
     /**
@@ -100,14 +100,14 @@ class MobilController extends Controller
     public function update(Request $request, $id)
     {
 
-        $this->validate($request, [
-            'kode_mobil' => 'required',
-            'merk' => 'required',
-            'type' => 'required',
-            'warna' => 'required',
-            'harga_mobil' => 'required',
-            'gambar' => 'required|mimes:jpeg.jpg.png.gif|required|max:2048',
-        ]);
+        // $this->validate($request, [
+        //     'kode_mobil' => 'required',
+        //     'merk' => 'required',
+        //     'type' => 'required',
+        //     'warna' => 'required',
+        //     'harga_mobil' => 'required',
+        //     'gambar' => 'required|mimes:jpeg.jpg.png.gif|required|max:2048',
+        // ]);
 
 
         $mobil = mobil::findOrFail($id);

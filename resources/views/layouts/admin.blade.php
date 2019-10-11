@@ -29,10 +29,11 @@
     <link href="{{asset('assets/template/vendor/slick/slick.css')}}" rel="stylesheet" media="all">
     <link href="{{asset('assets/template/vendor/select2/select2.min.css')}}" rel="stylesheet" media="all">
     <link href="{{asset('assets/template/vendor/perfect-scrollbar/perfect-scrollbar.css')}}" rel="stylesheet" media="all">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/DataTables/datatables.min.css')}}"/>
+
 
     <!-- Main CSS-->
     <link href="{{asset('assets/template/css/theme.css')}}" rel="stylesheet" media="all">
-
 </head>
 
 <body class="animsition">
@@ -164,6 +165,9 @@
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
+                        @guest
+                        @else
+                        @role('admin')
                         <li>
                             <a href="{{ url('admin/mobil') }}">
                                 <i class="far fa-check-square"></i>Mobil</a>
@@ -188,7 +192,33 @@
                         <li>
                             <a href="{{ url('admin/paket_kredit') }}">
                                 <i class="far fa-check-square"></i>Paket Kredit</a>
-                        
+                        </li>
+                        @endguest
+                        @endrole
+
+                        @role('member')
+                        <li>
+                                <a href="{{ url('admin/mobil') }}">
+                                    <i class="far fa-check-square"></i>Mobil</a>
+                            </li>
+                            <li>
+                                <a href="{{ url('admin/cash') }}">
+                                    <i class="far fa-check-square"></i>Cash</a>
+                            </li>
+                            <li>
+                                <a href="{{ url('admin/kredit') }}">
+                                    <i class="far fa-check-square"></i>Kredit</a>
+                            </li>
+                            <li>
+                                <a href="{{ url('admin/bayar_cicilan') }}">
+                                    <i class="far fa-check-square"></i>Cicilan</a>
+                            </li>
+    
+                            <li>
+                                <a href="{{ url('admin/paket_kredit') }}">
+                                    <i class="far fa-check-square"></i>Paket Kredit</a>
+                            </li>
+                        @endrole
                     </ul>
                 </nav>
             </div>
@@ -287,9 +317,14 @@
     <script src="{{asset('assets/template/vendor/chartjs/Chart.bundle.min.js')}}"></script>
     <script src="{{asset('assets/template/vendor/select2/select2.min.js')}}">
     </script>
-
     <!-- Main JS-->
     <script src="{{asset('assets/template/js/main.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/DataTables/datatables.min.js')}}"></script>
+    <script>
+        $(document).ready(function() {
+    $('#datatable').DataTable();
+} );
+    </script>
 
 </body>
 
