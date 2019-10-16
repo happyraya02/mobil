@@ -92,7 +92,7 @@ class BayarcicilanController extends Controller
         // $request->validate([
         //     'nama_bayar_cicilan' => 'required',
         // ]);
-        $bayar_cicilan = new bayar_cicilan();
+        $bayar_cicilan = bayar_cicilan::findOrFail($id);
         $bayar_cicilan->kode_cicilan = $request->kode_cicilan;
         $bayar_cicilan->kode_kredit = $request->kode_kredit;
         $bayar_cicilan->tgl_cicilan = $request->tgl_cicilan;

@@ -41,8 +41,8 @@
                                 <td>{{$no++}}</td>
                                 <td>{{$data->kode_kredit}}</td>
                                 <td>{{$data->KTP}}</td>
-                                <td>{{$data->paket_kredits_id}}</td>
-                                <td>{{$data->mobils_id}}</td>
+                                <td>{{$data->kode_paket}}</td>
+                                <td>{{$data->kode_mobil}}</td>
                                 <td>{{$data->tgl_kredit}}</td>
                             
                                

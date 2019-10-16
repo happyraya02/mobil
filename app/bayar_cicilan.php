@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class bayar_cicilan extends Model
 {
     protected $fillable = [
-        'kode_cicilan', 'kredits_id', 
+        'kode_cicilan', 'kode_kredit', 
         'tgl_cicilan', 'jumlah_cicilan',
         'cicilan_ke', 'cicilan_sisa_ke', 
         'cicilan_sisa_harga'];

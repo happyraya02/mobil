@@ -94,7 +94,7 @@ class PaketkreditController extends Controller
         // $request->validate([
         //     'nama_paket_kredit' => 'required|unique:paket_kredits'
         // ]);
-        $paket_kredit = new paket_kredit();
+        $paket_kredit =paket_kredit::findOrFail($id);
         $paket_kredit->kode_paket = $request->kode_paket;
         $paket_kredit->harga_paket = $request->harga_paket;
         $paket_kredit->uang_muka = $request->uang_muka;

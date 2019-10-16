@@ -43,9 +43,21 @@
 <script src="{{asset('assets/backend/assets/vendor/flot/jquery.flot.time.js')}}"></script>
 <script src="{{asset('assets/backend/assets/vendor/flot.curvedlines/curvedLines.js')}}"></script>
 <script src="{{asset('assets/backend/assets/vendor/datatables.net/js/jquery.dataTables.js')}}"></script>
-<script src="{{asset('assets/backend/assets/vendor/datatables.net-bs4/js/dataTables.bootstrap4.js')}}"></script>
+<script src="{{asset('akode_cicilan = $request->kode_cicilan;
+    $bayar_cicilan->kode_kredit = $request->kode_kredit;
+    $bayar_cicilan->tgl_cicilan = $request->tgl_cicilan;
+    $bayar_cicilan->jumlah_cicilan = $request->jumlah_cicilan;
+    $bayar_cicilan->cicilan_ke = $request->cicilan_ke;
+    $bayar_cicilan->cicilan_sisa_ke = $request->cicilan_sisa_ke;
+    $bayar_cicilan->cicilan_sisa_harga ssets/backend/assets/vendor/datatables.net-bs4/js/dataTables.bootstrap4.js')}}"></script>
 <!-- ================== GLOBAL APP SCRIPTS ==================-->
-<script src="{{asset('assets/backend/assets/js/global/app.js')}}"></script>
+<script src="{{asset('akode_cicilan = $request->kode_cicilan;
+    $bayar_cicilan->kode_kredit = $request->kode_kredit;
+    $bayar_cicilan->tgl_cicilan = $request->tgl_cicilan;
+    $bayar_cicilan->jumlah_cicilan = $request->jumlah_cicilan;
+    $bayar_cicilan->cicilan_ke = $request->cicilan_ke;
+    $bayar_cicilan->cicilan_sisa_ke = $request->cicilan_sisa_ke;
+    $bayar_cicilan->cicilan_sisa_harga ssets/backend/assets/js/global/app.js')}}"></script>
 <!-- ================== PAGE LEVEL SCRIPTS ==================-->
 <script src="{{asset('assets/backend/assets/js/components/countUp-init.js')}}"></script>
 <script src="{{asset('assets/backend/assets/js/cards/counter-group.js')}}"></script>
@@ -66,36 +78,35 @@
                     </center>
     
                     <div class="card-body">
-                        <form action="{{route('bayar_cicilan.update', $bayar_cicilan->id)}}" method="post">
-                            <input type="hidden" name="_method" value="PATCH">
+                        <form action="{{route('bayar_cicilan.store')}}" method="post">
                             {{csrf_field()}}
                             <div class="form-group">
                                 <label for="">Kode Cicilan</label>
-                                <input class="form-control" type="text" name="kode_cicilan" id="" value="{{$bayar_cicilan->kode_cicilan}}">
+                                <input class="form-control" type="text" name="kode_cicilan" id="" value="{{$bayar_cicilan->kode_cicilan}}"disabled>
                             </div>
                             <div class="form-group">
                                 <label for="">Kode Kredit</label>
-                                <input class="form-control" type="text" name="kode_kredit" id="" value="{{$bayar_cicilan->kode_kredit}}">
+                                <input class="form-control" type="text" name="kode_kredit" id="" value="{{$bayar_cicilan->kode_kredit}}"disabled>
                             </div>
                             <div class="form-group">
                                 <label for="">Tanggal Cicilan</label>
-                                <input class="form-control" type="text" name="tgl_cicilan" id="" value="{{$bayar_cicilan->tgl_cicilan}}">
+                                <input class="form-control" type="text" name="tgl_cicilan" id="" value="{{$bayar_cicilan->tgl_cicilan}}"disabled>
                             </div>
                             <div class="form-group">
                                 <label for="">Jumlah Cicilan</label>
-                                <input class="form-control" type="text" name="jumlah_cicilan" id="" value="{{$bayar_cicilan->jumlah_cicilan}}">
+                                <input class="form-control" type="text" name="jumlah_cicilan" id="" value="{{$bayar_cicilan->jumlah_cicilan}}"disabled>
                             </div>
                             <div class="form-group">
                                 <label for="">Cicilan Ke</label>
-                                <input class="form-control" type="text" name="cicilan_ke" id="" value="{{$bayar_cicilan->cicilan_ke}}">
+                                <input class="form-control" type="text" name="cicilan_ke" id="" value="{{$bayar_cicilan->cicilan_ke}}"disabled>
                             </div>
                             <div class="form-group">
                                 <label for="">Cicilan Sisa Ke</label>
-                                <input class="form-control" type="text" name="cicilan_sisa_ke" id="" value="{{$bayar_cicilan->cicilan_sisa_ke}}">
+                                <input class="form-control" type="text" name="cicilan_sisa_ke" id="" value="{{$bayar_cicilan->cicilan_sisa_ke}}"disabled>
                             </div>
                             <div class="form-group">
                                 <label for="">Cicilan Sisa Harga</label>
-                                <input class="form-control" type="text" name="cicilan_sisa_harga" id="" value="{{$bayar_cicilan->cicilan_sisa_harga}}">
+                                <input class="form-control" type="text" name="cicilan_sisa_harga" id="" value="{{$bayar_cicilan->cicilan_sisa_harga}}"disabled>
                             </div>
                             <div class="form-group">
                                 <a href="{{url('admin/bayar_cicilan')}}" class="btn btn-outline-info">Kembali</a>
